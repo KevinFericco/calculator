@@ -7,7 +7,7 @@ COPY . ./
 RUN yarn build
 
 # production environment
-FROM nginx:stable-alpine
+FROM node:latest
 RUN yarn global add serve
 WORKDIR app
 COPY --from=build /app/build .
